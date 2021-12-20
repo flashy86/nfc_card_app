@@ -58,8 +58,10 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+     - assets/images/logoidboo.png
+     - assets/images/frame_bamboo.png
+     - assets/images/logo_idboo.svg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -83,8 +85,9 @@ flutter:
     - family: ArimaMadurai
       fonts:
         - asset: assets/fonts/ArimaMadurai-Regular.ttf
-        - asset: assets/fonts/ArimaMadurai-Bold.ttf
         - weight: 400
+        - asset: assets/fonts/ArimaMadurai-Medium.ttf
+        - asset: assets/fonts/ArimaMadurai-Bold.ttf
         - weight: 700
       
   # fonts:
