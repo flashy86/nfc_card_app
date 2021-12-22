@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
-
+import '../widgets/background.dart';
 import '../widgets/background_card.dart';
 
 class HomeScreenWidget extends StatelessWidget {
+  static const routeName = 'home-screen';
+
+  void selectHomeScreen(BuildContext context) {
+    Navigator.of(context).pushNamed(HomeScreenWidget.routeName);
+  }
+
   @override
   Widget build(BuildContext context) {
     const blueLinearColor1 = Color(0xFF00E6E6);
@@ -17,6 +23,7 @@ class HomeScreenWidget extends StatelessWidget {
         ),
         body: Stack(
           children: [
+            Background(),
             BackgroundCard(),
             const SizedBox(
               child: Text('Bienvenue sur l\'application IDBOO'),
@@ -45,7 +52,7 @@ class HomeScreenWidget extends StatelessWidget {
                       primary: Colors.white,
                       textStyle: const TextStyle(fontSize: 20),
                     ),
-                    onPressed: () {},
+                    onPressed: () => selectHomeScreen(context),
                     child: const Text('Entrer dans l\'application'),
                   ),
                 ],

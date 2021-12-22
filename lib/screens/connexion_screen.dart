@@ -1,204 +1,71 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/background.dart';
 
-class ConnexionScreenWidget extends StatelessWidget {
-          @override
-          Widget build(BuildContext context) {
-          // Figma Flutter Generator PageconnexionWidget - FRAME
-            return Container(
-      width: 414,
-      height: 920,
-      decoration: const BoxDecoration(
-          borderRadius : BorderRadius.only(
-            topLeft: Radius.circular(32),
-            topRight: Radius.circular(32),
-            bottomLeft: Radius.circular(44),
-            bottomRight: Radius.circular(44),
+class ConnexionScreen extends StatefulWidget {
+  @override
+  State<ConnexionScreen> createState() => _ConnexionScreenState();
+}
+
+class _ConnexionScreenState extends State<ConnexionScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('IDBOO'),
+      ),
+      body: Stack(
+        children: <Widget>[
+          Background(),
+          Text(
+            'CONNEXION',
+            style: Theme.of(context).textTheme.headline6,
           ),
-      color : Color.fromRGBO(255, 255, 255, 1),
-  ),
-      child: Stack(
-        children: <Widget>[
-        const Positioned(
-        top: 778,
-        left: 215,
-        child: Text('CONNEXION')
-      ),const Positioned(
-        top: 778,
-        left: 24,
-        child: SizedBox()
-      ),const Positioned(
-        top: 203,
-        left: 52,
-        child: Text('Merci de vous connecter avec vos identifiants et mots de passe:', 
-        textAlign: TextAlign.left, style: TextStyle(
-        color: Color.fromRGBO(251, 251, 244, 1),
-        fontFamily: 'Lato',
-        fontSize: 16,
-        fontWeight: FontWeight.normal,
-        height: 1
-      ),)
-      ),Positioned(
-        top: 424,
-        left: 52,
-        child: SizedBox(
-      width: 310,
-      height: 119,
-      
-      child: Stack(
-        children: <Widget>[
-          Positioned(
-        top: 24,
-        left: 0,
-        child: SizedBox(
-      width: 310,
-      height: 95,
-      
-      child: Stack(
-        children: const <Widget>[
-          Positioned(
-        top: 0,
-        left: 0,
-        child: Text('mettre image ici')
+          Text(
+            'Merci de vous connecter avec vos identifiants et mots de passe:',
+            style: Theme.of(context).textTheme.bodyText1,
+          ),
+          Container(
+            margin:
+                const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 5),
+            padding: const EdgeInsets.all(3),
+            child: Column(
+              children: [
+                Text(
+                  'Email',
+                  style: Theme.of(context).textTheme.subtitle1,
+                ),
+                SizedBox(
+                  child: Text(
+                    'zone de formulaire pour email',
+                    style: Theme.of(context).textTheme.bodyText1,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin:
+                const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 5),
+            padding: const EdgeInsets.all(3),
+            child: Column(
+              children: [
+                Text(
+                  'Mot de passe',
+                  style: Theme.of(context).textTheme.subtitle1,
+                ),
+                SizedBox(
+                  child: Text('zone de formulaire pour mot de passe',
+                      style: Theme.of(context).textTheme.bodyText1),
+                ),
+              ],
+            ),
+          ),
+          Row(children: [Text('Connexion avec Gmail')],), 
+          Row(children: [Text('Connexion avec Gmail')],),
+          SizedBox(),
+        ],
       ),
-      Positioned(
-        top: 18,
-        left: 11,
-        child: SizedBox()
-      ),
-        ]
-      )
-    )
-      ),const Positioned(
-        top: 0,
-        left: 0,
-        child: Text('Mot de passe:', textAlign: TextAlign.left, style: TextStyle(
-        color: Color.fromRGBO(251, 251, 244, 1),
-        fontFamily: 'Arima Madurai',
-        fontSize: 18,
-        fontWeight: FontWeight.normal,
-        height: 1
-      ),)
-      ),
-        ]
-      )
-    )
-      ),Positioned(
-        top: 566,
-        left: 52,
-        child: SizedBox(
-      width: 310,
-      height: 50,
-      
-      child: Stack(
-        children: const <Widget>[
-          Positioned(
-        top: 0,
-        left: 0,
-        child: Text('Connexion avec Gmail', textAlign: TextAlign.left, style: TextStyle(
-        color: Color.fromRGBO(251, 251, 244, 1),
-        fontFamily: 'Lato',
-        fontSize: 16,
-        letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
-        fontWeight: FontWeight.normal,
-        height: 1
-      ),)
-      ),Positioned(
-        top: 0,
-        left: 260,
-        child: SizedBox()
-      ),
-        ]
-      )
-    )
-      ),Positioned(
-        top: 630,
-        left: 52,
-        child: SizedBox(
-      width: 310,
-      height: 50,
-      
-      child: Stack(
-        children: const <Widget>[
-          Positioned(
-        top: 0,
-        left: 0,
-        child: Text('Connexion avec Facebook', textAlign: TextAlign.left, style: TextStyle(
-        color: Color.fromRGBO(251, 251, 244, 1),
-        fontFamily: 'Lato',
-        fontSize: 16,
-        letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
-        fontWeight: FontWeight.normal,
-        height: 1
-      ),)
-      ),Positioned(
-        top: 0,
-        left: 260,
-        child: SizedBox()
-      ),
-        ]
-      )
-    )
-      ),Positioned(
-        top: 296,
-        left: 52,
-        child: SizedBox(
-      width: 310,
-      height: 114,
-      
-      child: Stack(
-        children: <Widget>[
-          const Positioned(
-        top: 0,
-        left: 0,
-        child: Text('Email:', textAlign: TextAlign.left, style: TextStyle(
-        color: Color.fromRGBO(251, 251, 244, 1),
-        fontFamily: 'Arima Madurai',
-        fontSize: 18,
-        letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
-        fontWeight: FontWeight.normal,
-        height: 1
-      ),)
-      ),Positioned(
-        top: 19,
-        left: 0,
-        child: SizedBox(
-      width: 310,
-      height: 95,
-      
-      child: Stack(
-        children: const <Widget>[
-          Positioned(
-        top: 0,
-        left: 0,
-        child: Text('mettre image ici')
-      ),Positioned(
-        top: 17,
-        left: 9,
-        child: SizedBox()
-      ),
-        ]
-      )
-    )
-      ),
-        ]
-      )
-    )
-      ),const Positioned(
-        top: 136,
-        left: 52,
-        child: Text('CONNEXION', textAlign: TextAlign.center, style: TextStyle(
-        color: Color.fromRGBO(0, 205, 205, 1),
-        fontFamily: 'Arima Madurai',
-        fontSize: 25,
-        letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
-        fontWeight: FontWeight.normal,
-        height: 1
-      ),)
-      ),
-        ]
-      )
     );
-          }
-        }
-        
+  }
+}
