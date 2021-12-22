@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nfc_card_app/screens/connexion_screen.dart';
 import 'package:nfc_card_app/screens/home_screen.dart';
 
 void main() {
@@ -62,7 +63,8 @@ class MyApp extends StatelessWidget {
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
       routes: {
-        HomeScreenWidget.routeName: (context) => HomeScreenWidget()
+        HomeScreenWidget.routeName: (context) => HomeScreenWidget(),
+        ConnexionScreen.routeName: (context) => ConnexionScreen()
       },
     );
   }
