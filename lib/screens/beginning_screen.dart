@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import '../widgets/background.dart';
 import '../widgets/background_card.dart';
 
-class HomeScreenWidget extends StatelessWidget {
-  static const routeName = 'home-screen';
+class BeginScreen extends StatelessWidget {
+  static const routeName = 'begin-screen';
 
-  void selectHomeScreen(BuildContext context) {
-    Navigator.of(context).pushNamed(HomeScreenWidget.routeName);
+  void selectBeginScreen(BuildContext context) {
+    Navigator.of(context).pushNamed(BeginScreen.routeName);
   }
 
   @override
@@ -52,7 +52,7 @@ class HomeScreenWidget extends StatelessWidget {
                       primary: Colors.white,
                       textStyle: const TextStyle(fontSize: 20),
                     ),
-                    onPressed: () => selectHomeScreen(context),
+                    onPressed: () => selectBeginScreen(context),
                     child: const Text('Entrer dans l\'application'),
                   ),
                 ],
