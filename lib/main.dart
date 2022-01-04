@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:nfc_card_app/screens/connexion_screen.dart';
-import 'package:nfc_card_app/screens/beginning_screen.dart';
-import 'package:nfc_card_app/screens/homepage_screen.dart';
+import 'package:provider/provider.dart';
+
+import './screens/connexion_screen.dart';
+import './screens/beginning_screen.dart';
+import './screens/homepage_screen.dart';
+import './providers/users.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -17,66 +19,69 @@ class MyApp extends StatelessWidget {
     const linearColor1 = Color(0xFF758181);
     const linearColor2 = Color(0xE6F2CE5F);
     const whiteTextColor = Color(0xFFFBFBF4);
-    
+    const String title = 'IDBOO';
 
     const menuLinearGradient = LinearGradient(
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
         colors: <Color>[linearColor1, linearColor2]);
 
-    return MaterialApp(
-      title: 'IDBOO APP',
-      theme: ThemeData(
-        primaryColor: blueBrand,
-        errorColor: const Color(0xCCCD0000),
-        textTheme: const TextTheme(
-          headline4: TextStyle(
-              fontFamily: 'Arima Madurai',
-              fontSize: 48,
-              fontWeight: FontWeight.bold,
-              color: whiteTextColor),
-          headline5: TextStyle(
-              fontFamily: 'Arima Madurai',
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-              color: blueBrand),
-          headline6: TextStyle(
-              fontFamily: 'Arima Madurai',
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
-              color: blueBrand),
-          subtitle1: TextStyle(
-              fontFamily: 'Lato',
-              fontSize: 22,
-              color: whiteTextColor,
-              fontWeight: FontWeight.normal),
-          subtitle2: TextStyle(
-              fontFamily: 'Arima Madurai',
-              fontSize: 16,
-              fontWeight: FontWeight.normal,
-              color: Colors.black),
-          bodyText1: TextStyle(
-              fontFamily: 'Lato',
-              fontSize: 16,
-              color: whiteTextColor,
-              fontWeight: FontWeight.normal),
+    return ChangeNotifierProvider(
+      create: (context) => Users(),
+      child: MaterialApp(
+        title: 'IDBOO APP',
+        theme: ThemeData(
+          primaryColor: blueBrand,
+          errorColor: const Color(0xCCCD0000),
+          textTheme: const TextTheme(
+            headline4: TextStyle(
+                fontFamily: 'Arima Madurai',
+                fontSize: 48,
+                fontWeight: FontWeight.bold,
+                color: whiteTextColor),
+            headline5: TextStyle(
+                fontFamily: 'Arima Madurai',
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: blueBrand),
+            headline6: TextStyle(
+                fontFamily: 'Arima Madurai',
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+                color: blueBrand),
+            subtitle1: TextStyle(
+                fontFamily: 'Lato',
+                fontSize: 22,
+                color: whiteTextColor,
+                fontWeight: FontWeight.normal),
+            subtitle2: TextStyle(
+                fontFamily: 'Arima Madurai',
+                fontSize: 16,
+                fontWeight: FontWeight.normal,
+                color: Colors.black),
+            bodyText1: TextStyle(
+                fontFamily: 'Lato',
+                fontSize: 16,
+                color: whiteTextColor,
+                fontWeight: FontWeight.normal),
+          ),
         ),
+        home: HomePage(),
+        routes: {
+          '/':(context) => HomePage(), 
+          BeginScreen.routeName: (context) => BeginScreen(),
+          ConnexionScreen.routeName: (context) => ConnexionScreen(), 
+         
+        },
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      routes: {
-        '/':(context) => HomePage(), //c'est ok il faut changer la fonction dans homepage avec utilisation ModalRoute comme category_meals
-        BeginScreen.routeName: (context) => BeginScreen(),
-        ConnexionScreen.routeName: (context) => ConnexionScreen(), 
-       
-      },
     );
   }
 }
-
+/* 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  String get title => null;
 
-  final String title;
+
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -148,3 +153,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+ */

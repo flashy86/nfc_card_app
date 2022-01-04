@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import '../widgets/menu.dart';
+import '../widgets/background.dart';
 
 class HomePage extends StatelessWidget {
   static const routeName = 'home-screen';
-  final String label;
-  final double spendingPctOfTotal;
-  final double spendingAmount;
-
-  HomePage(this.label, this.spendingPctOfTotal, this.spendingAmount);
+ 
 
   //modification de cette fonction avec utilisation ModaL Route pour passer les arguments.
   void selectHomePageScreen(BuildContext context) {
@@ -48,34 +45,40 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+//faire la fonction pour la navigation =>
     return Scaffold(
       appBar: AppBar(
         title: const Text('IDBOO'),
       ),
       drawer: MenuWidget(),
-      body: Column(
-        children: <Widget>[
-          const Text('Bienvenue Utilisateur'),
-          Container(
-            margin: const EdgeInsets.all(8),
-            child: Column(
-              children: [
-                Row(
+      body: Stack(
+        children: [
+          Background(),
+          Column(
+            children: <Widget>[
+              const Text('Bienvenue Utilisateur'),
+              Container(
+                margin: const EdgeInsets.all(8),
+                child: Column(
                   children: [
-                    buildNavigationCard(context, 'Voir ma carte'),
-                    buildNavigationCard(context, 'Editer ma carte')
+                    Row(
+                      children: [
+                        buildNavigationCard(context, 'Voir ma carte'),
+                        buildNavigationCard(context, 'Editer ma carte')
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        buildNavigationCard(context, 'Parametres'),
+                        buildNavigationCard(context, 'Store carte IDBOO')
+                      ],
+                    ),
+                    buildNavigationCard(context, 'Contact')
                   ],
                 ),
-                Row(
-                  children: [
-                    buildNavigationCard(context, 'Parametres'),
-                    buildNavigationCard(context, 'Store carte IDBOO')
-                  ],
-                ),
-                buildNavigationCard(context, 'Contact')
-              ],
-            ),
-          )
+              )
+            ],
+          ),
         ],
       ),
     );

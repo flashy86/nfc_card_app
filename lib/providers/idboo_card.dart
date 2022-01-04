@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import './user.dart';
+import 'user.dart';
 
 class IdbooCard {
   final String id;
@@ -8,8 +8,8 @@ class IdbooCard {
   final int availSpace;
 
   IdbooCard(
-      {required this.id,
-      required this.user,
-      required this.totalSpace,
-      required this.availSpace});
+      {@required this.id,
+      @required this.user,
+      @required this.totalSpace,
+      @required this.availSpace});
 }
